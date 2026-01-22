@@ -27,7 +27,7 @@ export function LoginForm({
       provider: "google",
       callbackURL: "http://localhost:3000",
     });
-    // console.log(data);
+    console.log(data);
   };
 
   const { data: session } = authClient.useSession();
