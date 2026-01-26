@@ -66,7 +66,7 @@ const BlogCard = async ({ post }: { post: BlogPost }) => {
               {post._count?.comments || 0}
             </span>
 
-            {post.isFeatured && (
+            {post.isFeatued && (
               <Badge
                 variant="default"
                 className="bg-yellow-500 hover:bg-yellow-600"

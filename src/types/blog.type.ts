@@ -3,7 +3,7 @@ export interface BlogPost {
   title: string;
   content: string;
   thumbnail?: string;
-  isFeatured: boolean;
+  isFeatued: boolean;
   status: string;
   tags?: string[];
   views: number;

@@ -9,15 +9,16 @@ export default async function Home() {
 
   console.log(session);
 
-  const { data } = await blogService.getBlogPosts();
+  const { data } = await blogService.getBlogPosts(
+    {},
+    {
+      cache: "no-store",
+    },
+  );
   console.log(data);
   return (
     <div>
       <Button>Click Me</Button>
-      {/* {data?.data?.map((post: BlogPost) => (
-        <BlogCard key={post.id} post={post} />
-      ))} */}
-
       <div className="max-w-9/12 mx-auto grid grid-cols-3 gap-5">
         {data?.data?.map((post: BlogPost) => (
           <BlogCard key={post.id} post={post} />
