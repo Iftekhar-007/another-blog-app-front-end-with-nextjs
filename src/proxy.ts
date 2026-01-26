@@ -21,6 +21,7 @@ export async function proxy(request: NextRequest) {
   }
 
   // valiadte user role with admin role
+  //  if not logged in then redirected to login page first
 
   if (!isAuthenticated) {
     return NextResponse.redirect(new URL("/auth/login", request.url));
