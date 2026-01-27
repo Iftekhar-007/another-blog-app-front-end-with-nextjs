@@ -3,11 +3,17 @@ import { blogService } from "@/services/blog.service";
 import { BlogPost } from "@/types";
 import React from "react";
 
+export async function generateStaticParams() {
+  const { data } = await blogService.getBlogPosts();
+
+  return data?.data?.map((blog: BlogPost) => ({ id: blog.id }));
+}
+
 const BlogPage = async () => {
   const { data } = await blogService.getBlogPosts(
     {},
     {
-      cache: "no-store",
+      revalidate: 10,
     },
   );
   console.log(data);

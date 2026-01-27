@@ -16,15 +16,15 @@ const DashboardLayout = async ({
   admin: React.ReactNode;
   user: React.ReactNode;
 }) => {
-  const { data: session } = await userService.getSession();
-  // console.log(data);
-  const userInfo = session.user;
+  // const { data: session } = await userService.getSession();
+  // // console.log(data);
+  // const userInfo = session.user;
 
-  const role = userInfo.role;
+  // const role = userInfo.role;
 
-  // const userInfo = {
-  //   role: "Admin",
-  // };
+  const userInfo = {
+    role: "Admin",
+  };
   return (
     <div>
       <SidebarProvider>
@@ -38,7 +38,7 @@ const DashboardLayout = async ({
             />
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4">
-            {role === "Admin" ? admin : user}
+            {userInfo.role === "Admin" ? admin : user}
           </div>
         </SidebarInset>
       </SidebarProvider>

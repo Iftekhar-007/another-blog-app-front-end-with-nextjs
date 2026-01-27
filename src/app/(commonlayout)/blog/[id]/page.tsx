@@ -1,5 +1,11 @@
 import { blogService } from "@/services/blog.service";
-import React from "react";
+import { BlogPost } from "@/types";
+
+export async function generateStaticParams() {
+  const { data } = await blogService.getBlogPosts();
+
+  return data?.data?.map((blog: BlogPost) => ({ id: blog.id })).splice(0, 4);
+}
 
 const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
