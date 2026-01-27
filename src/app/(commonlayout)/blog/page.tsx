@@ -1,7 +1,6 @@
 import BlogCard from "@/components/modules/homePage/BlogCard";
 import { blogService } from "@/services/blog.service";
 import { BlogPost } from "@/types";
-import React from "react";
 
 export async function generateStaticParams() {
   const { data } = await blogService.getBlogPosts();

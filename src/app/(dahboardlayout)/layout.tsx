@@ -7,7 +7,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { userService } from "@/services/user.service";
 
 const DashboardLayout = async ({
   admin,
