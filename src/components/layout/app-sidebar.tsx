@@ -14,6 +14,7 @@ import {
 import { Route } from "@/types";
 import { userRoutes } from "@/routes/userRoutes";
 import { adminRoutes } from "@/routes/adminRoutes";
+import { Roles } from "@/constants/roles";
 
 // This is sample data.
 
@@ -26,11 +27,11 @@ export function AppSidebar({
   let routes: Route[] = [];
 
   switch (user.role) {
-    case "User":
+    case Roles.user:
       routes = userRoutes;
       break;
 
-    case "Admin":
+    case Roles.admin:
       routes = adminRoutes;
       break;
 
